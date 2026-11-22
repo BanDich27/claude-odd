@@ -1,0 +1,18 @@
+{
+  "checks": [
+    { "name": "make check", "command": ["make", "check"] }
+  ],
+  "lint": ["make", "lint"],
+  "sonar": {
+    "command": ["make", "sonar-scan"],
+    "host": "http://127.0.0.1:9000",
+    "project_key": "vector-chess"
+  },
+  "screenshot": {
+    "command": ["make", "screenshot", "SCREEN={screen}", "OUT={out}", "SIZE={size}"],
+    "timeout": 120,
+    "screens": ["menu", "game", "mode_setup", "multiplayer", "piece_editor", "board_editor", "tile_editor", "rule_blocks"]
+  },
+  "watch": "split",
+  "notes": "Juego LÖVE 11.5 en Lua. Tests en spec/ con el runner propio (make test). Las pantallas se capturan con make screenshot (ui/screenshot.lua)."
+}
